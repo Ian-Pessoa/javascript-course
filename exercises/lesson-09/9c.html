@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      chose = 'heads';
+      displayChosenElement();
+    ">heads</button>
+    <button onclick="
+      chose = 'tails';
+      displayChosenElement();
+    ">tails</button>
+    <p></p>
+
+    <script>
+      let chose = '';
+
+      function displayChosenElement() {
+        document.querySelector('p').innerHTML = `You chose: ${chose}`;
+      }
+    </script>
+  </body>
+</html>

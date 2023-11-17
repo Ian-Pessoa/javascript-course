@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <input placeholder="Type something" onkeyup="
+      displayText();
+    ">
+    <p></p>
+
+    <script>
+      function displayText() {
+        const inputText = document.querySelector('input'); 
+        document.querySelector('p').innerHTML = inputText.value;  
+      }
+    </script>
+  </body>
+</html>
