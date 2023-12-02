@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .gaming-button {
+        background-color: black;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: rgb(230, 230, 230);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="gaming-button" onclick="
+      if(classList.contains('is-toggled')) {
+        classList.remove('is-toggled');
+      } else {
+        classList.add('is-toggled');
+      }
+    ">Gaming</button>
+  </body>
+</html>

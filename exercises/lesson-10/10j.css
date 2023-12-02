@@ -1,0 +1,47 @@
+* {
+  margin: 0px;
+  margin-left: 5px;
+}
+
+p {
+  margin: 0px;
+}
+
+body {
+  font-family: Arial;
+  background-color: black;
+  color: white;
+  font-size: 45px;
+}
+
+.calculation {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+button {
+  color: white;
+  background-color: rgb(51, 51, 51);
+  border: none;
+  padding: 15px 23px;
+  height: 60px;
+  width: 60px;
+  font-size: 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.signs-buttons {
+  background-color: rgb(254, 160, 10);
+}
+
+.clear-button {
+  font-size: 17px;
+}
+
+.clear-button span{
+  display: flex;
+  justify-content: center;
+}
