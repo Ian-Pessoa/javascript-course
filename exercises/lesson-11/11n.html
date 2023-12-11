@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      const result = {};
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+      function countWords(words) {
+        for (let i = 0; i < words.length; i++) {
+          if (!result[words[i]]) {
+            result[words[i]] = 1;
+          } else {
+            result[words[i]]++;
+          }
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>
