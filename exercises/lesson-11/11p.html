@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      console.log(hasTheWordSearch(['hello', 'world', 'search', 'good', 'search']));
+
+      function hasTheWordSearch(array){
+        let index = -1;
+        for(let i = 0; i < array.length; i++) {
+          if (array[i] === 'search') {
+            index = i;
+            return index;
+          } 
+        }
+        return index;
+      }
+    </script>
+  </body>
+</html>
