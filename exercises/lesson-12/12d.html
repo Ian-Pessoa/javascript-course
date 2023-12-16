@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      start();
+    ">Start</button>
+    <script>
+      const button = document.querySelector('button');
+
+      function start() {
+        if(button.innerHTML === 'Start') {
+          setTimeout(function() {
+            button.innerHTML = 'Finished!';
+          }, 1000);
+          button.innerHTML = 'Loading...';
+        } else {
+          button.innerHTML = 'Start';
+        }
+      };
+    </script>
+  </body>
+</html>

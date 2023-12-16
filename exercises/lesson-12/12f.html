@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      addToCart();
+    ">Add to cart</button>
+    <div></div>
+    <script>
+      const message = document.querySelector('div');
+
+      let timeout;
+
+      function addToCart() {
+        clearTimeout(timeout);
+        message.innerHTML = '<p>Added</p>';
+        timeout = setTimeout(function() {
+          message.innerHTML = '';
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>

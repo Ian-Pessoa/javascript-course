@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button onclick="
+      addToCart();
+    ">Add to cart</button>
+    <div></div>
+    <script>
+      const message = document.querySelector('div');
+
+      function addToCart() {
+        message.innerHTML = '<p>Added</p>';
+        setTimeout(function() {
+          message.innerHTML = '';
+        }, 2000);
+      };
+    </script>
+  </body>
+</html>
