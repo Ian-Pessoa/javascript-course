@@ -2,16 +2,17 @@
 <html>
   <head></head>
   <body>
-    <button onclick="
-      addToCart();
-    ">Add to cart</button>
+    <button>Add to cart</button>
     <div></div>
     <script>
       const message = document.querySelector('div');
 
+      document.querySelector('button')
+        .addEventListener('click', () => addToCart());
+
       function addToCart() {
         message.innerHTML = '<p>Added</p>';
-        setTimeout(function() {
+        setTimeout(() => {
           message.innerHTML = '';
         }, 2000);
       };

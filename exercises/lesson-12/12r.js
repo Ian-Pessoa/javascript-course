@@ -58,6 +58,81 @@ document.body.addEventListener('keydown', (event) => {
   }
 });  
 
+// Auto Play changes
+
+const autoPlayButton = document.querySelector('.auto-play-button');
+
+function changeAutoPlayText() {
+  if (autoPlayButton.innerHTML === 'Auto Play') {
+    autoPlayButton.innerHTML = 'Stop Playing';
+  } else {
+    autoPlayButton.innerHTML = 'Auto Play';
+  }
+};
+  
+autoPlayButton.addEventListener('click', () => {
+  autoPlay();
+  changeAutoPlayText();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'a'){
+    autoPlay();
+    changeAutoPlayText();
+  } 
+});
+
+// Reset Score changes
+
+const resetScoreButton = document.querySelector('.reset-score-button');
+const resetScoreConfimation = document.querySelector('.reset-score-confirmation');
+
+function DisplayConfirmResetScore() {
+  const displayConfimationHtml = `
+    <p>Are you sure you want to reset the score?</p>
+    <button class="confirm-reset-button js-yes-reset-button">Yes</button>
+    <button class="confirm-reset-button js-no-reset-button">No</button>
+  `;
+
+  resetScoreConfimation.innerHTML = displayConfimationHtml;
+
+  document.querySelector('.js-no-reset-button')
+    .addEventListener('click', () => {
+      resetScoreConfimation.innerHTML = '';
+    });
+
+  document.querySelector('.js-yes-reset-button')
+    .addEventListener('click', () => {
+      resetScore();
+      resetScoreConfimation.innerHTML = '';
+    });
+
+  document.body.addEventListener('keydown', (event) => {
+    if (event.key === ' ') {
+      resetScore();
+      resetScoreConfimation.innerHTML = '';
+    }
+  });  
+};
+
+resetScoreButton.addEventListener('click', () => {
+  DisplayConfirmResetScore();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === ' ') {
+    DisplayConfirmResetScore();
+  }
+});
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
   let result = '';
@@ -104,7 +179,7 @@ function playGame(playerMove) {
     .innerHTML = result;
    
   document.querySelector('.js-moves')
-    .innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon" alt=""> <img src="images/${computerMove}-emoji.png" class="move-icon" alt=""> Computer`;  
+    .innerHTML = `You <img src="../../copy-of-code/images/${playerMove}-emoji.png" class="move-icon" alt=""> <img src="../../copy-of-code/images/${computerMove}-emoji.png" class="move-icon" alt=""> Computer`;  
 
   updateScoreElement();
 }

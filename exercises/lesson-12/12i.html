@@ -4,24 +4,30 @@
     <title>App</title>
   </head>
   <body>
-    <button onclick="
-      messages++;
-      displayNotification();
-    ">Add</button>
+    <button class="js-add-button">Add</button>
+    <button class="js-remove-button">Remove</button>
 
-    <button onclick="
-      if (messages > 0) {
-        messages--;
-
-        if (messages === 0) {
-          stopNotification();
-        }
-      }
-    ">Remove</button>
     <script>
       let messages = 2;
       let intervalId;
       let isDisplayingNotification;
+
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          messages++;
+          displayNotification();
+        });
+
+      document.querySelector('.js-remove-button')
+        .addEventListener('click', () => {
+          if (messages > 0) {
+            messages--;
+
+            if (messages === 0) {
+              stopNotification();
+            }
+          }
+        });  
 
       displayNotification();
 
@@ -32,7 +38,7 @@
 
         isDisplayingNotification = true;
 
-        intervalId = setInterval(function() {
+        intervalId = setInterval(() => {
           if (document.title === 'App') {
             document.title = `(${messages}) New messages`;
           } else {

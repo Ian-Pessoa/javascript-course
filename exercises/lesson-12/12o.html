@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+      function removeEgg(foods) {
+        let count = 0;
+        return foods.filter(value => {
+          if (count < 2 && value === 'egg') {
+            count++;
+            return false;
+          } else {
+            return true;
+          }
+        })
+      };
+    </script>
+  </body>
+</html>

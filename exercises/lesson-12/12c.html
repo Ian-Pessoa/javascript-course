@@ -2,15 +2,15 @@
 <html>
   <head></head>
   <body>
-    <button onclick="
-      start();
-    ">Start</button>
+    <button>Start</button>
     <script>
       const button = document.querySelector('button');
 
+      button.addEventListener('click', () => start())
+
       function start() {
         if(button.innerHTML === 'Start') {
-          setTimeout(function() {
+          setTimeout(() => {
             button.innerHTML = 'Finished!';
           }, 1000);
         } else {
