@@ -656,5 +656,34 @@ const products = [
       "apparel",
       "mens"
     ]
+  },
+  {
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "Backpack Travel",
+    rating: {
+      stars: 5.0,
+      count: 52
+    },
+    priceCents: 1100,
+    keywords: [
+      "Backpack",
+      "Travel backpack"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Green Umbrella",
+    rating: {
+      stars: 4.0,
+      count: 19
+    },
+    priceCents: 1399,
+    keywords: [
+      "Umbrella",
+      "Rain umbrella",
+      "Compact umbrella"
+    ]
   }
 ];
